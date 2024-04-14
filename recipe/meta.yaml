@@ -21,9 +21,9 @@ requirements:
     - pip
   run:
     - python >=3.9,<4.dev0
-    - jax >=0.4.13
+    - jax >=0.4.26
     - jaxtyping >=0.2.20
-    - equinox >=0.11.0
+    - equinox >=0.11.3
     - typing-extensions >=4.5.0
 
 test:
@@ -35,6 +35,7 @@ test:
     - pip
 
 about:
+  home: https://github.com/patrick-kidger/lineax
   summary: Linear solvers in JAX and Equinox.
   license: Apache-2.0
   license_file: LICENSE
