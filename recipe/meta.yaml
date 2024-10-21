@@ -1,5 +1,5 @@
 {% set name = "lineax" %}
-{% set version = "0.0.6" %}
+{% set version = "0.0.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/lineax-{{ version }}.tar.gz
-  sha256: c3d4863ddb0595b69c19326b97c4cc2498d75a495ce8d34517ae2d7c2da459e6
+  sha256: e43549a8d202432d4668afe54866741a0214ccb363487bacb2a980f72840ea48
 
 build:
   noarch: python
@@ -20,6 +20,7 @@ requirements:
     - hatchling
     - pip
   run:
+    - typing_extensions >=4.5.0
     - python >=3.9,<4.dev0
     - jax >=0.4.26
     - jaxtyping >=0.2.20
