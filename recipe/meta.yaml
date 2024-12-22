@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/lineax-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/lineax-{{ version }}.tar.gz
   sha256: e43549a8d202432d4668afe54866741a0214ccb363487bacb2a980f72840ea48
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.9,<4.dev0
+    - python {{ python_min }}
     - hatchling
     - pip
   run:
-    - python >=3.9,<4.dev0
+    - python >={{ python_min }},<4.dev0
     - equinox >=0.11.5
     - jax >=0.4.26
     - jaxtyping >=0.2.20
@@ -33,6 +33,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/patrick-kidger/lineax
